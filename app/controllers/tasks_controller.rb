@@ -10,10 +10,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.user_id = session[:project_id]
+    binding.pry
+    @task.project_id = params[:project_id]
     if @task.save
       flash.notice = "Task added successfully"
-      redirect_to tasks_path
+      redirect_to project_path(Project.find(params[:project_id]))
     else
       flash.notice = @task.errors.full_messages.join(". ")
       render "new"
