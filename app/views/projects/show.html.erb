@@ -49,6 +49,7 @@
 </ul>
 
 <div class="text-center">
+    <%= link_to "Delete Project", project_path(@project), method: :delete, action: :destroy %>
   <a href="<%= new_project_task_path(@project) %>" class="button">Add a New Task</a>
   <a href="<%= projects_path %>" class="button">Your Projects</a>
 </div>
