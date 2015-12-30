@@ -7,6 +7,12 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @tasks = @project.tasks
+    @tasks_1 = @tasks.select { |task| task.phase == 1 }
+    @tasks_2 = @tasks.select { |task| task.phase == 2 }
+    @tasks_3 = @tasks.select { |task| task.phase == 3 }
+    @tasks_4 = @tasks.select { |task| task.phase == 4 }
+    @tasks_5 = @tasks.select { |task| task.phase == 5 }
+    @tasks_6 = @tasks.select { |task| task.phase == 6 }
   end
 
   def new
