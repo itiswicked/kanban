@@ -4,5 +4,4 @@ class Project < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :project_name, presence: true
-  end
 end
