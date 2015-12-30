@@ -1,15 +1,11 @@
 <header class="mdl-layout__header">
   <div class="mdl-layout__header-row">
-    <!-- Title -->
     <span class="mdl-layout-title">Title</span>
-    <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
-    <!-- Navigation. We hide it in small screens. -->
     <nav class="mdl-navigation mdl-layout--large-screen-only">
     <% if current_user %>
       <%= image_tag current_user.avatar_url, class: "image-topbar" %>
       <span><%= current_user.username %></span>
-      <!-- Right aligned menu below button -->
       <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">more_vert</i>
       </button>
@@ -25,10 +21,23 @@
 </header>
 <div class="mdl-layout__drawer">
   <span class="mdl-layout-title">Title</span>
-  <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="">Link</a>
-    <a class="mdl-navigation__link" href="">Link</a>
-    <a class="mdl-navigation__link" href="">Link</a>
-    <a class="mdl-navigation__link" href="">Link</a>
-  </nav>
+  <div class="">
+    <%= form_for(Project.new) do |f| %>
+    <div class="field">
+      <%= f.label :project_name %><br />
+      <%= f.text_field :project_name %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+  <% if current_user %>
+    <nav class="mdl-navigation">
+  <% Project.all.each do |project| %>
+      <a class="mdl-navigation__link"  href="/projects/<%= project.id %>"><%= project.project_name %></a>
+  <% end %>
+    </nav>
+  <% end %>
 </div>

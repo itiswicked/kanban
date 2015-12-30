@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_omniauth(auth_hash)
     session[:user_id] = @user.id
     flash.notice = "You are now signed in as #{@user.username}!"
-    redirect_to root_path
+    redirect_to projects_path
   end
 
   def destroy
