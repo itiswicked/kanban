@@ -1,6 +1,78 @@
 // VARIABLES
 
+
+// MAIN
+
+.page-content {
+  background-color: rgb(35, 105, 82);
+  color: white;
+}
+
+// COLUMN HEADERS
+
+.column-headers {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.header {
+  height: 50px;
+  border: 1px solid black;
+  p {
+    margin: 0;
+  }
+}
+
+#story-header {
+  order: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
+}
+
+#test-header {
+  order: 2;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
+}
+
+#build-header {
+  order: 3;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
+}
+
+#review-header {
+  order: 4;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
+}
+
+#refactor-header {
+  order: 5;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
+}
+
+#done-header {
+  order: 6;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
+}
+
+
+
 // COLUMNS
+
+
 
 .board {
   height: 500px;
@@ -16,32 +88,46 @@
 }
 
 
-.story {
+
+
+#story {
   order: 1;
   flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
 }
 
-.test {
+#test {
   order: 2;
   flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
 }
 
-.build {
+#build {
   order: 3;
   flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
 }
 
-.review {
+#review {
   order: 4;
   flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
 }
 
-.refactor {
+#refactor {
   order: 5;
   flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
 }
 
-.done {
+#done {
   order: 6;
   flex-grow: 1;
+  flex-shrink: 1;
+  width: (100% / 6);
 }
