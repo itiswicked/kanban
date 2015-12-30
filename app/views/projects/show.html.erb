@@ -1,3 +1,45 @@
+<div class='board'>
+  <div id='story' class='column'>
+    <div class="mdl-card mdl-shadow--4dp">
+      <div class="mdl-card__title">
+        <p>
+          drop the bass!
+        </p>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <p>
+          Then pick it back up!
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id='test' class='column '>
+    <% @tasks.each do |task| %>
+    <div class="mdl-card mdl-shadow--4dp">
+      <div class="mdl-card__title">
+        <p><%= task.task_name %></p>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <p><%= task.description %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div id='build' class='column '>
+
+  </div>
+  <div id='review' class='column'>
+
+  </div>
+  <div id='refactor' class='column'>
+
+  </div>
+  <div id='done' class='column'>
+
+  </div>
+</div>
+
+
 <h1><%= @project.project_name %></h1>
 <ul>
   <% @tasks.each do |task| %>
