@@ -1,0 +1,12 @@
+<h1><%= @project.project_name %></h1>
+<ul>
+  <% @tasks.each do |task| %>
+<li><%= task.task_name %></li>
+  <%= task.phase %>
+  <% end %>
+</ul>
+
+<div class="text-center">
+  <a href="<%= new_project_task_path(@project) %>" class="button">Add a New Task</a>
+  <a href="<%= projects_path %>" class="button">Your Projects</a>
+</div>
