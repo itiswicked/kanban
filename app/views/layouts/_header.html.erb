@@ -6,10 +6,21 @@
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation. We hide it in small screens. -->
     <nav class="mdl-navigation mdl-layout--large-screen-only">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href=""><%= link_to "Sign in with Github", "/auth/github" %></a>
+    <% if current_user %>
+      <%= image_tag current_user.avatar_url, class: "image-topbar" %>
+      <span><%= current_user.username %></span>
+      <!-- Right aligned menu below button -->
+      <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+      </button>
+
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+        <li class="mdl-menu__item"><%= link_to 'Sign Out', sign_out_path %></li>
+      </ul>
+    <% else %>
+      <%= link_to "Sign in with Github", "/auth/github" %>
+    <% end %>
     </nav>
   </div>
 </header>
@@ -23,6 +34,3 @@
   </nav>
 </div>
 
- <% flash.each do |key, value| %>
- <%= value %>
- <% end %>
