@@ -15,11 +15,12 @@ feature "User signs in" do
   end
 
   scenario "successful sign in" do
-    expect(page).to have_content "You are now signed in as #{user.username}!"
+    expect(page).to have_content "#{user.username}"
   end
 
   scenario "successful sign out" do
-    click_link "Sign out"
+    click_button "mdl-menu__item"
+    click_link "Sign Out"
 
     expect(page).to have_content "You have been signed out"
   end
