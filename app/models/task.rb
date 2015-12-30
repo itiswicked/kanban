@@ -4,5 +4,4 @@ class Task < ActiveRecord::Base
   validates :project_id, presence: true
   validates :task_name, presence: true
   validates :phase, presence: true
-  end
 end

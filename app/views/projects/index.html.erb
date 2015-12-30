@@ -1,0 +1,9 @@
+<h1>Projects</h1>
+<ul>
+  <% @projects.each do |project| %>
+    <li><%= link_to project.project_name, project_path(project) %></li>
+  <% end %>
+</ul>
+<div class="text-center">
+  <a href="<%= new_project_path %>" class="button">Add a New Project!</a>
+</div>
